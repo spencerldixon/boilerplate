@@ -1,0 +1,21 @@
+<div class="bg-white text-black rounded-3xl p-8 md:px-20 md:py-11">
+  <h2 class="text-4xl font-bold text-center mb-4">Forgot your password?</h2>
+  <p class="md:w-96 text-center text-gray-600">Enter the email address you registered with and we’ll send you instructions for setting a new password</p>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field my-4">
+      <%= f.label :email, "Email address", class: "block mb-2" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Send reset email", class: "w-full bg-black text-white p-3 rounded-lg hover:cursor-pointer" %>
+    </div>
+  <% end %>
+
+  <div class="mt-11">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

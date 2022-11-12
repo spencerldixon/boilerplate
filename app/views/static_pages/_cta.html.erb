@@ -1,0 +1,25 @@
+<div class="w-full rounded-3xl text-white md:grid md:grid-cols-2 gap-6 bg-gradient-to-r from-indigo-700 to-indigo-800">
+  <div class="p-20">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+      <span class="block">Ready to dive in?</span>
+      <span class="block">Start your free trial today.</span>
+    </h2>
+
+    <p class="text-xl text-indigo-200 mt-6 mb-10">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis erat sed tellus convallis, in consequat elit mollis. Donec eget volutpat ex. Morbi sagittis ipsum at vestibulum maximus.
+    </p>
+
+    <%= link_to "Sign up for free", new_user_registration_path, class: "px-8 py-4 rounded-lg bg-slate-100 text-indigo-600 shadow-md" %>
+  </div>
+
+  <div class="lg:relative overflow-hidden">
+    <div class="p-20 lg:p-0 transition-colors ease-linear shadow-md lg:absolute top-16 left-16">
+      <div class="w-full h-12 rounded-tl-xl bg-gray-200 flex justify-start items-center space-x-1.5 px-4">
+        <span class="w-3 h-3 border-2 border-transparent rounded-full bg-red-400"></span>
+        <span class="w-3 h-3 border-2 border-transparent rounded-full bg-yellow-400"></span>
+        <span class="w-3 h-3 border-2 border-transparent rounded-full bg-green-400"></span>
+      </div>
+      <img src="https://via.placeholder.com/903x565" alt="" class="rounded-b-xl" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="bg-white text-black rounded-3xl p-8 md:px-20 md:py-11">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
+    <h2 class="text-4xl font-bold text-center mb-4">Sign up</h2>
+
+    <div class="field mb-4">
+      <%= f.label :first_name, class: "block mb-2" %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+    </div>
+
+    <div class="field mb-4">
+      <%= f.label :last_name, class: "block mb-2" %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+    </div>
+
+    <div class="field mb-4">
+      <%= f.label :email, "Email address", class: "block mb-2" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+    </div>
+
+    <div class="field mb-4">
+      <div class="block mb-2">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+      </div>
+      <%= f.password_field :password, autocomplete: "new-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+    </div>
+
+    <div class="field mb-4">
+      <%= f.label :password_confirmation, class: "block mb-2" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+
+    </div>
+
+    <div class="field mb-4 flex justify-between gap-2">
+      <%= f.check_box :terms_and_conditions, class: "mt-1 h-4 w-4 rounded block" %>
+
+      <%= f.label :terms_and_conditions, class: "text-sm text-gray-600 md:w-96" do %>
+        I have read and agree to the <%= link_to "Terms of Use", root_path, class: "font-bold" %> and  <%= link_to "Privacy Policy", root_path, class: "font-bold" %>
+    <% end %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit "Register", class: "w-full bg-black text-white p-3 rounded-lg hover:cursor-pointer" %>
+    </div>
+  <% end %>
+</div>

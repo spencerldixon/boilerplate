@@ -1,0 +1,30 @@
+<div class="flex justify-between items-center">
+  <div>
+    <%= link_to root_path, class: "text-xl cursor-pointer" do %>
+      <i class="fa-solid fa-heart mr-2"></i>
+      <span class="hidden sm:inline-block">Boilerplate</span>
+    <% end %>
+  </div>
+
+  <div class="hidden md:flex justify-center gap-8">
+    <% unless user_signed_in? %>
+      <%= link_to "Why Boilerplate?", root_path, class: "hover:underline" %>
+      <%= link_to "Community", root_path, class: "hover:underline" %>
+      <%= link_to "Pricing", root_path, class: "hover:underline" %>
+    <% end %>
+  </div>
+
+  <div class="flex justify-end items-center gap-8">
+    <% if user_signed_in? %>
+      <%= link_to edit_user_registration_path, class: "h-12 w-12 bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer" do %>
+        <i class="fa-solid fa-gear text-2xl text-gray-900"></i>
+      <% end %>
+
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: "delete" }, class: "cursor-pointer hover:underline" %>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path, class: "hover:underline cursor-pointer" %>
+      <%= link_to "Start free trial", new_user_registration_path, class: "px-8 py-4 rounded-lg bg-gray-900 text-white" %>
+    <% end %>
+  </div>
+</div>
+
