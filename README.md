@@ -84,6 +84,7 @@ Things that have been changed from their defaults...
 - UUIDs are configured instead of incremental IDs as primary keys
 - `.gitignore` will ignore database dumps, `.DS_Store` files and `.env` files
 - Docker IP range has been whitelisted in `config/environments/development.rb` to allow the web console to work properly in development.
+- Enable Stimulus debug mode in development
 
 ## Tests & Linting
 
