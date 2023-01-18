@@ -85,6 +85,7 @@ Things that have been changed from their defaults...
 - `.gitignore` will ignore database dumps, `.DS_Store` files and `.env` files
 - Docker IP range has been whitelisted in `config/environments/development.rb` to allow the web console to work properly in development.
 - Enable Stimulus debug mode in development
+- Faker unique generator is reset after each test spec to ensure unique values don't run out
 
 ## Tests & Linting
 
