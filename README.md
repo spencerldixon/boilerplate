@@ -13,7 +13,6 @@ Built on...
 - Tailwind (with Tailwind Forms)
 - Esbuild
 - Stimulus
-- Docker
 - Good Job (background queue)
 
 ## Gems & Packages
@@ -63,11 +62,12 @@ Here's what you get out of the box...
 - A `Procfile` for Heroku deployments
 - Empty partials for `app/views/shared/_analytics.html.erb` and `app/views/shared/_metatags.html.erb` to drop in analytics (consider using Plausible.io instead of GA!) and opengraph tags
 - A favicon
-- Tailwind CSS with Tailwind Forms plugin
+- Tailwind CSS with Tailwind Forms and Tailwind Typography plugin
 - A default minimalist Docker config for development
 - Good Job for a background worker
 - Font Awesome Icons (https://fontawesome.com/search?o=r&m=free)
 - User has `first_name`, `last_name`, and `admin` columns
+- Privacy Policy and T&C pages
 
 ## Configurations
 

@@ -12,23 +12,20 @@
     <%= render "shared/analytics" %>
   </head>
 
-  <body class="bg-gray-100">
+  <body class="bg-zinc-900 text-zinc-50">
     <%= render "shared/flash_notifications" %>
 
-    <div class="">
-      <div class="md:h-screen p-5">
-          <div class="flex flex-col md:text-white md:rounded-3xl md:p-5 md:h-full md:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
-            <div class="rounded-3xl mb-5 md:mt-0 p-5 md:p-0">
-              <%= render 'shared/navigation' %>
-            </div>
+    <div class="md:flex md:min-h-screen">
+      <div class="flex flex-col md:text-white md:rounded-3xl w-full">
+        <%= render 'shared/navigation' %>
 
-            <div class="md:flex md:h-full md:justify-center md:items-center">
-              <%= yield %>
-            </div>
-          </div>
+        <div class="md:flex md:flex-col h-full md:justify-center md:items-center p-6">
+          <%= yield %>
+        </div>
       </div>
     </div>
 
     <%= render "shared/footer" %>
   </body>
 </html>
+

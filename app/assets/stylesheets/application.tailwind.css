@@ -2,3 +2,4 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "animate.css";
+@import "components/errors.css";

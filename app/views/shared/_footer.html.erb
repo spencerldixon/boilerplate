@@ -1,47 +1,60 @@
-<footer class="w-full bg-white">
-  <div class="container mx-auto px-4 py-12">
+<footer class="w-full bg-zinc-50 text-zinc-900 border-t">
+  <div class="container mx-auto px-4 py-10">
     <div class="grid grid-cols-2 gap-10 mb-3 md:grid-cols-3 lg:grid-cols-11 lg:gap-20">
       <div class="col-span-3">
-        <%= link_to root_path, class: "flex items-center" do %>
-          <span class="text-3xl font-bold">Boilerplate</span>
-        <% end %>
+        <%= link_to "Boilerplate", root_path, class: "text-xl font-semibold" %>
 
-        <p class="my-4 text-gray-600">
+        <p class="my-4 text-zinc-500">
           Put a nice short description of your app here. Built by @spencerldixon
         </p>
       </div>
-      <nav class="col-span-1 md:col-span-1 lg:col-span-2">
-        <p class="mb-3 font-semibold tracking-wider text-gray-400 uppercase">Product</p>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Features</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Pricing</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Feedback</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">FAQs</a>
+      <nav class="flex flex-col gap-2 col-span-1 md:col-span-1 lg:col-span-2">
+        <p class="font-semibold">Features</p>
+        <%= link_to "Features", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Pricing", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Feedback", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "FAQs", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
-      <nav class="col-span-2 md:col-span-1 lg:col-span-2">
-        <p class="mb-3 font-semibold tracking-wider text-gray-400 uppercase">Support</p>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Chat</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#"> Email Support </a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">GDPR</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#"> Help </a>
+
+      <nav class="flex flex-col gap-2 col-span-2 md:col-span-1 lg:col-span-2">
+        <p class="font-semibold">Support</p>
+        <%= link_to "Chat", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Email", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "GDPR", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Help", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
-      <nav class="col-span-1 md:col-span-1 lg:col-span-2">
-        <p class="mb-3 font-semibold tracking-wider text-gray-400 uppercase">Resources</p>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Blog</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#"> Twitter </a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Alternatives</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Why feature vote?</a>
+
+      <nav class="flex flex-col gap-2 col-span-2 md:col-span-1 lg:col-span-2">
+        <p class="font-semibold">Resources</p>
+        <%= link_to "Blog", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Twitter", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Alternatives", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Why", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
-      <nav class="col-span-1 md:col-span-1 lg:col-span-2">
-        <p class="mb-3 font-semibold tracking-wider text-gray-400 uppercase">Company</p>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">About Us</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Privacy</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Terms</a>
-        <a class="flex mb-3 text-gray-800 transition md:mb-2 hover:text-purple-800" href="#">Status</a>
+
+      <nav class="flex flex-col gap-2 col-span-2 md:col-span-1 lg:col-span-2">
+        <p class="font-semibold">Legal</p>
+        <%= link_to "Privacy", privacy_path, class: "hover:underline decoration-2 underline-offset-4" %>
+        <%= link_to "Terms", terms_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
     </div>
-    <div class="flex flex-col items-start justify-between pt-10 mt-10 border-t border-gray-100 md:flex-row md:items-center">
-      <p class="mb-2 text-left text-gray-600 md:mb-0">Built by @spencerldixon</p>
-      <p class="mb-0 text-left text-gray-600 md:mb-0">Copyright <%= Date.current.year %> Boilerplate</p>
+
+    <div class="flex flex-col items-start justify-between mt-10 md:flex-row md:items-center">
+      <p class="text-zinc-500 mb-4 md:mb-0 text-sm">Copyright <%= Date.current.year %></p>
+
+      <div class="flex text-zinc-800 gap-x-4">
+        <%= link_to root_path do %>
+          <i class="fa-brands fa-github fa-xl"></i>
+        <% end %>
+
+        <%= link_to root_path do %>
+          <i class="fa-brands fa-twitter fa-xl"></i>
+        <% end %>
+
+        <%= link_to root_path do %>
+          <i class="fa-brands fa-discord fa-xl"></i>
+        <% end %>
+      </div>
     </div>
   </div>
 </footer>

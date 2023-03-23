@@ -5,6 +5,7 @@
     <div class="field mb-4">
       <%= f.label :first_name, class: "block mb-2" %>
       <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+      <%= error_message_on(resource, :first_name) %>
     </div>
 
     <div class="field mb-4">

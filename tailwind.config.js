@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
@@ -7,5 +8,6 @@ module.exports = {
   ],
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ]
 }

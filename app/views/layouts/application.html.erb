@@ -12,17 +12,23 @@
     <%= render "shared/analytics" %>
   </head>
 
-  <body class="bg-gray-100">
+  <body class="bg-zinc-50 text-zinc-800">
     <%= render "shared/flash_notifications" %>
 
-    <div class="min-h-screen p-10 text-gray-900">
-      <div class="mb-10">
+    <main class="min-h-screen">
+      <% if user_signed_in? %>
+        <div class="flex">
+          <%= render "shared/sidebar" %>
+          <%= yield %>
+        </div>
+      <% else %>
         <%= render "shared/navigation" %>
-      </div>
+        <%= yield %>
+      <% end %>
+    </main>
 
-      <%= yield %>
-    </div>
-
-    <%= render "shared/footer" %>
+    <% unless user_signed_in? %>
+      <%= render "shared/footer" %>
+    <% end %>
   </body>
 </html>
