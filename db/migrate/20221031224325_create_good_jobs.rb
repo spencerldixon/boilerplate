@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+
 class CreateGoodJobs < ActiveRecord::Migration[7.0]
   def change
-    enable_extension 'pgcrypto'
+    enable_extension "pgcrypto"
 
     create_table :good_jobs, id: :uuid do |t|
       t.text :queue_name
@@ -41,7 +42,7 @@ class CreateGoodJobs < ActiveRecord::Migration[7.0]
     add_index :good_jobs, [:cron_key, :cron_at], name: :index_good_jobs_on_cron_key_and_cron_at, unique: true
     add_index :good_jobs, [:active_job_id], name: :index_good_jobs_on_active_job_id
     add_index :good_jobs, [:finished_at], where: "retried_good_job_id IS NULL AND finished_at IS NOT NULL", name: :index_good_jobs_jobs_on_finished_at
-    add_index :good_jobs, [:priority, :created_at], order: { priority: "DESC NULLS LAST", created_at: :asc },
+    add_index :good_jobs, [:priority, :created_at], order: {priority: "DESC NULLS LAST", created_at: :asc},
       where: "finished_at IS NULL", name: :index_good_jobs_jobs_on_priority_created_at_when_unfinished
   end
 end

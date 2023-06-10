@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   authenticate :user, ->(user) { user.admin? } do
-    mount GoodJob::Engine => 'good_job'
+    mount GoodJob::Engine => "good_job"
   end
 
   get "privacy", to: "static_pages#privacy"

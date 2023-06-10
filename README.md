@@ -7,7 +7,7 @@ A mildly opinionated starting point for rails projects based on good practices a
 Built on...
 
 - Rails 7.0.4
-- Ruby 3.1.2
+- Ruby 3.2.2
 - PostgreSQL 15
 - Hotwire
 - Tailwind (with Tailwind Forms)

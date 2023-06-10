@@ -12,6 +12,7 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
+require "good_job/engine"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -39,8 +40,8 @@ module Boilerplate
 
     config.action_mailer.delivery_method = :smtp
 
-    config.action_mailer.default_url_options =  {
-      host: 'localhost',
+    config.action_mailer.default_url_options = {
+      host: "localhost",
       port: 3000
     }
 

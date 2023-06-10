@@ -1,3 +1,3 @@
 .field_with_errors input {
-    @apply !border !border-red-700/50 focus:!outline-none focus:!ring-1 focus:!ring-red-700
+  @apply !border !border-red-700/50 focus:!outline-none focus:!ring-1 focus:!ring-red-700
 }

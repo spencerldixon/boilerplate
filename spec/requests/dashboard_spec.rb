@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Dashboards", type: :request do
   describe "GET /index" do
@@ -7,5 +7,4 @@ RSpec.describe "Dashboards", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
 end

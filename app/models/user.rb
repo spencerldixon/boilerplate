@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable,
-    :confirmable, :lockable
+    :confirmable, :lockable, :trackable
 
   attr_accessor :terms_and_conditions
 
@@ -18,5 +18,9 @@ class User < ApplicationRecord
     if COMMON_PASSWORDS.include?(password)
       errors.add(:password, "Cannot be a common password")
     end
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later(queue: :devise)
   end
 end
