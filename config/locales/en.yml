@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+
+  unauthorized:
+    default: "You do not have permission to perform that action."

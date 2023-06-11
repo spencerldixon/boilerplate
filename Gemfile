@@ -15,10 +15,11 @@ gem "redis", "~> 5.0.6"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", "~> 1.15.0", require: false
 gem "good_job", "~> 3.15.11"
+gem 'cancancan', '~> 3.5.0'
 
 # Gems
 gem "devise", "~> 4.9.2"
-gem "inline_svg", "~> 1.9.0"
+gem "inline_svg", '~> 1.9.0'
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]

@@ -25,6 +25,7 @@ With these pre-installed...
 - Standardrb
 - Brakeman
 - Faker
+- CanCanCan
 - Animate.css (https://animate.style/)
 - Font Awesome 6.2.0 Free Icons (https://fontawesome.com/search?o=r&m=free)
 - Letter Opener (https://github.com/ryanb/letter_opener)
@@ -72,6 +73,7 @@ Here's what you get out of the box...
 - `user.full_name` method
 - A before action of `require_turbo_frame_request` to stop users accessing pages that should only be loaded via turbo frame (e.g. modals)
 - An onboarding modal with turbo frames (easy to make multistep, just link to the next turbo frame)
+- Cancancan installed with default abilites set up for admin
 
 ## Configurations
 
@@ -93,6 +95,7 @@ Things that have been changed from their defaults...
 - Sends devise mail through GoodJob in a dedicated `:devise` queue
 - Configures ActiveJob for test environment
 - Configures Capybara to use `:rack_test` for most test, and `:selenium_headless` for js tests. Config in `spec_helper.rb`
+- More pleasing error messages set up in `en.yml` for Cancancan
 
 ## Tests & Linting
 
