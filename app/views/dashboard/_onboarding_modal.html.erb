@@ -1,0 +1,7 @@
+<% if session[:onboarding] %>
+  <div data-controller="modal" data-modal-open-on-connect-value="true">
+    <%= render "shared/modal" do %>
+      <%= turbo_frame_tag "onboarding", src: onboarding_path %>
+    <% end %>
+  </div>
+<% end %>

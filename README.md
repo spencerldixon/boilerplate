@@ -70,6 +70,8 @@ Here's what you get out of the box...
 - Privacy Policy and T&C pages
 - `error_message_on(resource, :field)` let's you render per-field validations
 - `user.full_name` method
+- A before action of `require_turbo_frame_request` to stop users accessing pages that should only be loaded via turbo frame (e.g. modals)
+- An onboarding modal with turbo frames (easy to make multistep, just link to the next turbo frame)
 
 ## Configurations
 

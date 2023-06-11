@@ -15,3 +15,7 @@ module CapybaraHelpers
     click_on "commit"
   end
 end
+
+RSpec.configure do |config|
+  config.include CapybaraHelpers
+end
