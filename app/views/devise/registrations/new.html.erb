@@ -11,11 +11,13 @@
     <div class="field mb-4">
       <%= f.label :last_name, class: "block mb-2" %>
       <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+      <%= error_message_on(resource, :last_name) %>
     </div>
 
     <div class="field mb-4">
       <%= f.label :email, "Email address", class: "block mb-2" %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+      <%= error_message_on(resource, :email) %>
     </div>
 
     <div class="field mb-4">
@@ -26,11 +28,13 @@
         <% end %>
       </div>
       <%= f.password_field :password, autocomplete: "new-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+      <%= error_message_on(resource, :password) %>
     </div>
 
     <div class="field mb-4">
       <%= f.label :password_confirmation, class: "block mb-2" %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+      <%= error_message_on(resource, :password_confirmation) %>
 
     </div>
 
@@ -39,6 +43,7 @@
 
       <%= f.label :terms_and_conditions, class: "text-sm text-gray-600 md:w-96" do %>
         I have read and agree to the <%= link_to "Terms of Use", root_path, class: "font-bold" %> and  <%= link_to "Privacy Policy", root_path, class: "font-bold" %>
+      <%= error_message_on(resource, :terms_and_conditions) %>
     <% end %>
     </div>
 

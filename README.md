@@ -68,6 +68,8 @@ Here's what you get out of the box...
 - Font Awesome Icons (https://fontawesome.com/search?o=r&m=free)
 - User has `first_name`, `last_name`, and `admin` columns
 - Privacy Policy and T&C pages
+- `error_message_on(resource, :field)` let's you render per-field validations
+- `user.full_name` method
 
 ## Configurations
 
@@ -86,6 +88,9 @@ Things that have been changed from their defaults...
 - Docker IP range has been whitelisted in `config/environments/development.rb` to allow the web console to work properly in development.
 - Enable Stimulus debug mode in development
 - Faker unique generator is reset after each test spec to ensure unique values don't run out
+- Sends devise mail through GoodJob in a dedicated `:devise` queue
+- Configures ActiveJob for test environment
+- Configures Capybara to use `:rack_test` for most test, and `:selenium_headless` for js tests. Config in `spec_helper.rb`
 
 ## Tests & Linting
 

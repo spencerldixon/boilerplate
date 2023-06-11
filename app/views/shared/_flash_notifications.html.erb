@@ -1,5 +1,5 @@
 <% flash.each do |key, value| %>
-  <div data-controller="flash" class="flex items-center fixed top-3 right-3 <%= flash_css_class(key) %> p-5 rounded-lg shadow-md">
+  <div data-controller="flash" class="flex items-center fixed top-3 right-3 z-50 <%= flash_css_class(key) %> p-5 rounded-lg shadow-md">
     <div class="mr-4"><%= value %></div>
 
     <button type="button" data-action="flash#dismiss">

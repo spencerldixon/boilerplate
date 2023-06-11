@@ -9,6 +9,10 @@ class User < ApplicationRecord
   validates_acceptance_of :terms_and_conditions, allow_nil: false, on: :create
   validate :uncommon_password
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
   def uncommon_password

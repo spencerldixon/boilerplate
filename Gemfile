@@ -30,6 +30,11 @@ group :development, :test do
   gem "dotenv-rails", "~> 2.8.1"
 end
 
+group :test do
+  gem "capybara", "~> 3.39.1"
+  gem "selenium-webdriver", "~> 4.10.0"
+end
+
 group :development do
   gem "web-console", "~> 4.2.0"
   gem "letter_opener", "~> 1.8.1"

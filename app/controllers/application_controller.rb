@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
     return if current_user.admin?
     redirect_to root_path, notice: "You must be an admin to access this resource"
   end
+
+  def after_sign_up_path_for(resource)
+    session[:onboarding] = true
+    root_path
+  end
 end
