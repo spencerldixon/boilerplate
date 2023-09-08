@@ -22,7 +22,9 @@
           <%= yield %>
         </div>
       <% else %>
-        <%= render "shared/navigation" %>
+        <div class="bg-zinc-50 sticky top-0 z-50">
+          <%= render "shared/navigation" %>
+        </div>
         <%= yield %>
       <% end %>
     </main>

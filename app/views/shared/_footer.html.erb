@@ -1,14 +1,15 @@
 <footer class="w-full bg-zinc-50 text-zinc-900 border-t">
   <div class="container mx-auto px-4 py-10">
-    <div class="grid grid-cols-2 gap-10 mb-3 md:grid-cols-3 lg:grid-cols-11 lg:gap-20">
-      <div class="col-span-3">
+    <div class="grid grid-cols-2 gap-10 mb-3 md:grid-cols-6">
+      <div class="col-span-2">
         <%= link_to "Boilerplate", root_path, class: "text-xl font-semibold" %>
 
         <p class="my-4 text-zinc-500">
           Put a nice short description of your app here. Built by @spencerldixon
         </p>
       </div>
-      <nav class="flex flex-col gap-2 col-span-1 md:col-span-1 lg:col-span-2">
+
+      <nav class="flex flex-col gap-2 col-span-1">
         <p class="font-semibold">Features</p>
         <%= link_to "Features", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
         <%= link_to "Pricing", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
@@ -16,7 +17,7 @@
         <%= link_to "FAQs", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
 
-      <nav class="flex flex-col gap-2 col-span-2 md:col-span-1 lg:col-span-2">
+      <nav class="flex flex-col gap-2 col-span-1">
         <p class="font-semibold">Support</p>
         <%= link_to "Chat", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
         <%= link_to "Email", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
@@ -24,7 +25,7 @@
         <%= link_to "Help", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
 
-      <nav class="flex flex-col gap-2 col-span-2 md:col-span-1 lg:col-span-2">
+      <nav class="flex flex-col gap-2 col-span-1">
         <p class="font-semibold">Resources</p>
         <%= link_to "Blog", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
         <%= link_to "Twitter", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
@@ -32,14 +33,14 @@
         <%= link_to "Why", root_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
 
-      <nav class="flex flex-col gap-2 col-span-2 md:col-span-1 lg:col-span-2">
+      <nav class="flex flex-col gap-2 col-span-1">
         <p class="font-semibold">Legal</p>
         <%= link_to "Privacy", privacy_path, class: "hover:underline decoration-2 underline-offset-4" %>
         <%= link_to "Terms", terms_path, class: "hover:underline decoration-2 underline-offset-4" %>
       </nav>
     </div>
 
-    <div class="flex flex-col items-start justify-between mt-10 md:flex-row md:items-center">
+    <div class="flex flex-row items-baseline justify-between mt-10">
       <p class="text-zinc-500 mb-4 md:mb-0 text-sm">Copyright <%= Date.current.year %></p>
 
       <div class="flex text-zinc-800 gap-x-4">

@@ -29,6 +29,7 @@ group :development, :test do
   gem "brakeman", "~> 6.0.0", require: false
   gem "faker", "~> 3.2.0"
   gem "dotenv-rails", "~> 2.8.1"
+  gem "bullet", '~> 7.0.7'
 end
 
 group :test do
