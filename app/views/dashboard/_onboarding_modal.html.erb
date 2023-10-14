@@ -1,5 +1,5 @@
 <% if session[:onboarding] %>
-  <div data-controller="modal" data-modal-open-on-connect-value="true">
+  <div data-controller="modal confetti" data-modal-open-on-connect-value="true" data-action="load@window->confetti#cannon">
     <%= render "shared/modal" do %>
       <%= turbo_frame_tag "onboarding", src: onboarding_path %>
     <% end %>

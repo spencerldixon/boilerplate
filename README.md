@@ -100,6 +100,17 @@ Things that have been changed from their defaults...
 - More pleasing error messages set up in `en.yml` for Cancancan
 - Disallows OpenAI's GPTBot web crawler in the `robots.txt` file
 
+
+## Launch checklist
+
+Before you launch, don't forget to...
+
+1. Rename the app
+2. Set config variables for your support email and other config
+3. Add your analytics in `views/shared/_analytics.html.erb`
+4. Add your metatags in `views/shared/_metatags.html.erb`
+5.
+
 ## Tests & Linting
 
 ```

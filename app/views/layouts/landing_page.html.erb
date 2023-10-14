@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boilerplate</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= favicon_link_tag 'favicon.ico', "data-turbo-track": "reload" %>
+    <%= render "shared/metatags" %>
+    <%= render "shared/analytics" %>
+  </head>
+
+  <body class="bg-zinc-50 text-zinc-800">
+    <%= render "shared/flash_notifications" %>
+
+    <main class="min-h-screen">
+      <div class="bg-zinc-50 sticky top-0 z-10">
+        <%= render "shared/navigation" %>
+      </div>
+
+      <%= yield %>
+    </main>
+
+    <%= render "shared/footer" %>
+  </body>
+</html>

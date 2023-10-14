@@ -2,21 +2,21 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
     <h2 class="text-4xl font-semibold text-center mb-4">Log in</h2>
 
-    <div class="field mb-4">
+    <div class="mb-4">
       <%= f.label :email, "Email address", class: "block mb-2" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600 field" %>
     </div>
 
-    <div class="field mb-4">
+    <div class="mb-4">
       <%= f.label :password, class: "block mb-2" %>
-      <%= f.password_field :password, autocomplete: "current-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600 field" %>
 
     </div>
 
     <div class="flex justify-between mb-4 flex-col md:flex-row">
       <% if devise_mapping.rememberable? %>
         <div class="flex flex-row items-center">
-          <div class="field">
+          <div class="">
             <%= f.check_box :remember_me, class: "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded" %>
             <%= f.label :remember_me, class: "ml-2 text-sm" %>
           </div>

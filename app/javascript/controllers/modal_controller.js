@@ -22,4 +22,8 @@ export default class extends Controller {
   open() {
     this.modalTarget.classList.remove("hidden")
   }
+
+  toggle() {
+    this.modalTarget.classList.toggle("hidden")
+  }
 }

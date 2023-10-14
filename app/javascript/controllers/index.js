@@ -9,3 +9,7 @@ application.register("flash", FlashController)
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
+
+import ConfettiController from "./confetti_controller"
+application.register("confetti", ConfettiController)
+

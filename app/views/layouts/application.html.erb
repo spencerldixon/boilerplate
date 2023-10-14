@@ -15,22 +15,24 @@
   <body class="bg-zinc-50 text-zinc-800">
     <%= render "shared/flash_notifications" %>
 
-    <main class="min-h-screen">
-      <% if user_signed_in? %>
-        <div class="flex">
-          <%= render "shared/sidebar" %>
+    <main class="min-h-screen flex w-full">
+      <div class="hidden lg:flex bg-white w-[24rem] shrink-0">
+        <div class="p-6">
+          <%= link_to root_path, class: "text-xl font-semibold cursor-pointer" do %>
+            Boilerplate
+          <% end %>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-zinc-50 w-full">
+        <%= render "shared/navigation" %>
+
+        <div class="p-6 h-full">
           <%= yield %>
         </div>
-      <% else %>
-        <div class="bg-zinc-50 sticky top-0 z-50">
-          <%= render "shared/navigation" %>
-        </div>
-        <%= yield %>
-      <% end %>
-    </main>
+      </div>
 
-    <% unless user_signed_in? %>
-      <%= render "shared/footer" %>
-    <% end %>
+      <%= render "shared/feedback_widget" %>
+    </main>
   </body>
 </html>

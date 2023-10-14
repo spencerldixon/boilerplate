@@ -12,12 +12,14 @@
     <%= render "shared/analytics" %>
   </head>
 
-  <body class="bg-zinc-50 text-zinc-900">
+  <body class="bg-zinc-100 text-zinc-900">
     <%= render "shared/flash_notifications" %>
 
     <div class="md:flex md:min-h-screen">
-      <div class="flex flex-col md:text-white md:rounded-3xl w-full">
-        <%= render 'shared/navigation' %>
+      <div class="flex flex-col md:rounded-3xl w-full">
+        <%= link_to root_path, class: "text-center pt-6 text-xl font-semibold cursor-pointer" do %>
+          Boilerplate
+        <% end %>
 
         <div class="md:flex md:flex-col h-full md:justify-center md:items-center p-6">
           <%= yield %>
