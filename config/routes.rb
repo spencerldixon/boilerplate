@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "subscriptions/new"
+  get "subscriptions/checkout"
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }

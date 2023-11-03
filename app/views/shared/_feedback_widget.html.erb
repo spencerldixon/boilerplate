@@ -1,3 +1,5 @@
-<div class="fixed bottom-1/4 right-2 flex items-center justify-center bg-green-600 h-14 w-14 rounded-xl animate__animated animate__tada">
-  <i class="fa-regular fa-comment fa-xl text-zinc-50"></i>
-</div>
+<%= mail_to(Rails.application.credentials.mailer.support_email) do %>
+  <div class="fixed bottom-1/4 right-2 flex items-center justify-center bg-green-600 hover:bg-green-700 h-14 w-14 rounded-xl animate__animated animate__tada">
+    <i class="fa-regular fa-comment fa-xl text-zinc-50"></i>
+  </div>
+<% end %>

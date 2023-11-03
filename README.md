@@ -14,6 +14,7 @@ Built on...
 - Esbuild
 - Stimulus
 - Good Job (background queue)
+- Active Storage (S3)
 
 ## Gems & Packages
 
@@ -30,14 +31,13 @@ With these pre-installed...
 - Font Awesome 6.2.0 Free Icons (https://fontawesome.com/search?o=r&m=free)
 - Letter Opener (https://github.com/ryanb/letter_opener)
 - Bullet
+- Sitemap Generator
 
 ## Setup
 
 Fork the project and do a find and replace for `boilerplate`
 
 ```
-cp .env.example .env
-
 rails db:create db:migrate db:seed
 
 ./bin/dev
@@ -47,6 +47,35 @@ The default user will be seeded with the following credentials
 
 Email: `test@test.com`
 Password: `test1234test`
+
+## Credentials
+
+Boilerplate uses the rails default of multi-environment encrypted credentials. Follow these steps to get set up.
+
+1. Delete `config/credentials`
+2. run `rails credentials:edit --environment production` (for each environment)
+3. Populate each config file with the following...1
+
+```yaml
+secret_key_base: XXXX
+
+mailer:
+  support_email: support@boilerplate.com
+  noreply_email: noreply@boilerplate.com
+  username: XXXX
+  password: XXXX
+  domain: XXXX
+  address: XXXX
+  port: 456
+
+amazon:
+  access_key_id: ""
+  secret_access_key: ""
+  region: ""
+  bucket: ""
+```
+
+4. Replace values with your own credentials!
 
 ## Features
 
@@ -76,6 +105,9 @@ Here's what you get out of the box...
 - An onboarding modal with turbo frames (easy to make multistep, just link to the next turbo frame)
 - Cancancan installed with default abilites set up for admin
 - Bullet set up to catch n+1s early
+- Performance tweaks for a high Lighthouse score out of the box
+- Sitemap Generator gem for dynamic sitemaps - `rails sitemap:refresh`
+- Active Storage configured with S3 to host the sitemap (since ephemeral storage with Heroku)
 
 ## Configurations
 
@@ -99,6 +131,10 @@ Things that have been changed from their defaults...
 - Configures Capybara to use `:rack_test` for most test, and `:selenium_headless` for js tests. Config in `spec_helper.rb`
 - More pleasing error messages set up in `en.yml` for Cancancan
 - Disallows OpenAI's GPTBot web crawler in the `robots.txt` file
+- Force HTTPS, and redirect https traffic - https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/
+- Enables text compression with Rack::Deflator for better performance
+- Adds default metatags for SEO in `app/views/shared/metatags.html.erb`
+- Removes trailing slashes from urls - https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes
 
 
 ## Launch checklist

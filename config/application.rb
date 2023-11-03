@@ -27,6 +27,14 @@ module Boilerplate
     # Configure good job as our background worker
     config.active_job.queue_adapter = :good_job
 
+    # Use Rack::Deflator for text compression
+    config.middleware.use Rack::Deflater
+
+    # Remove trailing slashes from urls
+    config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
+      r301 %r{^/(.*)/$}, '/$1'
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

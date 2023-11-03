@@ -5,39 +5,42 @@ ruby "3.2.2"
 
 gem "rails", "~> 7.0.5"
 gem "sprockets-rails", "~> 3.4.2"
-gem "pg", "~> 1.5.3"
-gem "puma", "~> 6.2.2"
-gem "jsbundling-rails", "~> 1.1.1"
-gem "turbo-rails", "~> 1.4.0"
-gem "stimulus-rails", "~> 1.2.1"
-gem "cssbundling-rails", "~> 1.1.2"
-gem "redis", "~> 5.0.6"
+gem "pg", "~> 1.5.4"
+gem "puma", "~> 6.4.0"
+gem "jsbundling-rails", "~> 1.2.1"
+gem "turbo-rails", "~> 1.5.0"
+gem "stimulus-rails", "~> 1.3.0"
+gem "cssbundling-rails", "~> 1.3.3"
+gem "redis", "~> 5.0.7"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
-gem "bootsnap", "~> 1.15.0", require: false
-gem "good_job", "~> 3.15.11"
-gem 'cancancan', '~> 3.5.0'
+gem "bootsnap", "~> 1.16.0", require: false
+gem "good_job", "~> 3.19.4"
+gem "cancancan", "~> 3.5.0"
+gem "sitemap_generator", "~> 6.3.0"
+gem 'rack-rewrite', '~> 1.5.1'
+gem "aws-sdk-s3", '~> 1.136.0', require: false
+
 
 # Gems
-gem "devise", "~> 4.9.2"
-gem "inline_svg", '~> 1.9.0'
+gem "devise", "~> 4.9.3"
+gem "inline_svg", "~> 1.9.0"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
   gem "rspec-rails", "~> 6.0.3"
   gem "factory_bot_rails", "~> 6.2.0"
-  gem "standard", "~> 1.29.0"
+  gem "standard", "~> 1.31.2"
   gem "brakeman", "~> 6.0.0", require: false
-  gem "faker", "~> 3.2.0"
-  gem "dotenv-rails", "~> 2.8.1"
-  gem "bullet", '~> 7.0.7'
+  gem "faker", "~> 3.2.1"
+  gem "bullet", "~> 7.1.2"
 end
 
 group :test do
-  gem "capybara", "~> 3.39.1"
-  gem "selenium-webdriver", "~> 4.10.0"
+  gem "capybara", "~> 3.39.2"
+  gem "selenium-webdriver", "~> 4.14.0"
 end
 
 group :development do
-  gem "web-console", "~> 4.2.0"
+  gem "web-console", "~> 4.2.1"
   gem "letter_opener", "~> 1.8.1"
 end
