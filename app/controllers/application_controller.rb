@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def require_admin
+    return if current_user.admin?
+    redirect_to root_path, notice: "You must be an admin to access this resource"
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_in, keys: [])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :terms_and_conditions])

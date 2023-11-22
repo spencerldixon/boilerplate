@@ -1,161 +1,70 @@
 <div class="flex justify-between items-center">
-  <h2 class="text-4xl font-bold text-brevio__dark-blue">My Account</h2>
-  <p class="text-sm text-brevio__dark-blue--50">*Required information</p>
+  <h2 class="text-3xl font-bold text-zinc-900">My Account</h2>
+  <p class="text-sm text-slate-500">*Required information</p>
 </div>
 
-<hr class="my-8">
+<hr class="my-6">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: {turbo: false}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <p class="font-semibold">Update your details</p>
+  <p class="font-semibold mb-6">Update your details</p>
 
-  <div class="mt-6">
-    <div class="mb-6">
+  <div class="flex flex-col gap-y-6">
+    <div>
       <%= f.label :first_name, "*First Name", class: "block mb-2" %>
-      <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "w-full brevio__field" %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "w-full field" %>
     </div>
 
-    <div class="mb-6">
+    <div>
       <%= f.label :last_name, "*Last Name", class: "block mb-2" %>
-      <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name", class: "w-full brevio__field" %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name", class: "w-full field" %>
     </div>
 
-    <div class="mb-6">
+    <div>
       <%= f.label :email, "*Email Address", class: "block mb-2" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full brevio__field" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full field" %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div class="text-sm mt-2 text-brevio__dark-blue--50">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <div class="text-sm mt-2">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     </div>
   </div>
 
   <hr class="my-8">
 
-  <p class="font-semibold">Update your password</p>
+  <p class="font-semibold mb-6">Update your password</p>
 
   <div class="mt-6">
     <div class="mb-6">
       <%= f.label :current_password, class: "block mb-2" %>
-      <p class="text-sm text-brevio__dark-blue--50 mb-2">(we need your current password to confirm your changes)</p>
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "w-full brevio__field" %>
+      <p class="text-sm text-zinc-500 mb-2">(we need your current password to confirm your changes)</p>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "w-full field" %>
     </div>
 
     <div class="mb-6">
       <%= f.label :password, "New password", class: "block mb-2" %>
-      <p class="text-sm text-brevio__dark-blue--50 mb-2">(leave blank if you don't want to change it)</p>
-      <%= f.password_field :password, autocomplete: "new-password", class: "w-full brevio__field" %>
+      <p class="text-sm text-zinc-500 mb-2">(leave blank if you don't want to change it)</p>
+      <%= f.password_field :password, autocomplete: "new-password", class: "w-full field" %>
       <% if @minimum_password_length %>
-        <em class="text-sm text-brevio__dark-blue--50"><%= @minimum_password_length %> characters minimum</em>
+        <em class="text-sm text-zinc-500"><%= @minimum_password_length %> characters minimum</em>
       <% end %>
     </div>
 
     <div class="mb-6">
       <%= f.label :password_confirmation, class: "block mb-2" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full brevio__field" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full field" %>
     </div>
   </div>
 
-  <%= f.submit "Update", class: "bg-brevio__green text-white px-12 py-2.5 rounded-xl hover:bg-brevio__rollover-green cursor-pointer focus:bg-brevio__green/80 active:bg-brevio__dark-blue" %>
+  <%= f.submit "Update", class: "bg-zinc-900 text-white px-12 py-2.5 rounded-xl hover:bg-zinc-800 cursor-pointer focus:bg-zinc-800 active:bg-zinc-800" %>
 
-  <hr class="my-8">
+
+  <hr class="my-6">
 
   <p class="font-semibold">Your subscription</p>
 <% end %>
 
-<hr class="my-8">
+<hr class="my-6">
 
-<%= button_to "Delete your account", registration_path(resource_name), data: { turbo_confirm: "Are you sure? If you would just like to cancel your subscription, you can click on ‘update or cancel subscription’ and follow the instructions in Stripe to cancel. If you would like to completely close your account, please click `Yes`, this action cannot be undone" }, method: :delete, class: "underline text-brevio__dark-blue--50" %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="text-4xl font-bold mb-4">My Account</h2>
-<p class="mb-4">Update your details</p>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: {turbo: false}) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="rounded-xl border-gray-200 p-8 mb-5 bg-white">
-    <div class="field mb-4">
-      <%= f.label :first_name, class: "block mb-2" %>
-      <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
-    </div>
-
-    <div class="field mb-4">
-      <%= f.label :last_name, class: "block mb-2" %>
-      <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
-    </div>
-
-    <div class="field mb-4">
-      <%= f.label :email, "Email address", class: "block mb-2" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-  </div>
-
-  <div class="rounded-xl border border-2 border-gray-200 p-8 bg-white">
-    <div class="field mb-4">
-      <%= f.label :password, "New password", class: "block mb-2" %> (leave blank if you don't want to change it)
-      <%= f.password_field :password, autocomplete: "new-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em class="text-sm text-gray-600"><%= @minimum_password_length %> characters minimum</em>
-      <% end %>
-
-    </div>
-
-    <div class="field mb-4">
-      <%= f.label :password_confirmation, class: "block mb-2" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
-    </div>
-
-    <div class="field mb-4">
-      <%= f.label :current_password, class: "block mb-2" %> (we need your current password to confirm your changes)
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "w-full text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" %>
-    </div>
-
-
-  </div>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-
-  <div class="actions mt-5">
-    <%= f.submit "Update", class: "w-full bg-black text-white p-3 rounded-lg hover:cursor-pointer" %>
-  </div>
-<% end %>
-
-<%= button_to "Delete your account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "underline" %>
+<%= button_to "Delete your account", registration_path(resource_name), data: { turbo_confirm: "Are you sure? If you would just like to cancel your subscription, you can click on ‘update or cancel subscription’ and follow the instructions in Stripe to cancel. If you would like to completely close your account, please click `Ok`, this action cannot be undone" }, method: :delete, class: "underline text-red-700 hover:text-red-900 font-semibold" %>

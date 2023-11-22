@@ -12,5 +12,7 @@ class Ability
 
     ### Admin permissions ###
     return unless user.admin? # Admin can do everything above, plus everything below
+
+    can :show, :admin_dashboard
   end
 end

@@ -16,10 +16,28 @@
     <%= render "shared/flash_notifications" %>
 
     <main class="min-h-screen flex w-full">
-      <div class="hidden lg:flex bg-white w-[24rem] shrink-0">
-        <div class="p-6">
-          <%= link_to root_path, class: "text-xl font-semibold cursor-pointer" do %>
-            Boilerplate
+      <div class="hidden lg:flex flex-col bg-white w-[24rem] shrink-0 p-6">
+        <%= link_to root_path, class: "text-xl font-semibold cursor-pointer mb-12" do %>
+          Boilerplate
+        <% end %>
+
+        <div class="flex flex-col gap-2">
+          <%= link_to root_path, class: "hover:bg-slate-100 flex py-3 px-6 rounded-lg" do %>
+            Dashboard
+          <% end %>
+
+          <%= link_to root_path, class: "hover:bg-slate-100 flex py-3 px-6 rounded-lg" do %>
+            Something
+           <% end %>
+
+           <% if can? :show, :admin_dashboard %>
+             <%= link_to root_path, class: "hover:bg-slate-100 flex py-3 px-6 rounded-lg" do %>
+               Admin
+             <% end %>
+           <% end %>
+
+          <%= link_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "cursor-pointer hover:underline py-3 px-6" do %>
+            <i class="fa-solid fa-arrow-right-from-bracket mr-1.5"></i>Log out
           <% end %>
         </div>
       </div>

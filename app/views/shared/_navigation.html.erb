@@ -20,8 +20,9 @@
           <%= link_to edit_user_registration_path, class: "h-12 w-12 bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer" do %>
             <i class="fa-solid fa-gear text-2xl text-gray-900"></i>
           <% end %>
-
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "cursor-pointer hover:underline" %>
+          <%= link_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "cursor-pointer hover:underline" do %>
+            <i class="fa-solid fa-arrow-right-from-bracket mr-1.5"></i>Log out
+          <% end %>
         <% else %>
           <%= link_to "Log in", new_user_session_path, class: "hover:underline decoration-2 underline-offset-8 cursor-pointer" %>
           <%= link_to new_user_registration_path, class: "px-4 py-2 bg-zinc-900 hover:bg-zinc-700 text-zinc-50 rounded-lg" do %>
