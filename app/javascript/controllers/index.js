@@ -13,3 +13,5 @@ application.register("modal", ModalController)
 import ConfettiController from "./confetti_controller"
 application.register("confetti", ConfettiController)
 
+import RevealController from "./reveal_controller"
+application.register("reveal", RevealController)

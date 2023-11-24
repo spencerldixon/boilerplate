@@ -11,7 +11,7 @@ Rails.application.configure do
   end
 
   # Whitelist IP for docker to allow web console to run properly
-  config.web_console.whitelisted_ips = "172.18.0.0/24"
+  config.web_console.allowed_ips = "172.18.0.0/24"
 
   # Settings specified here will take precedence over those in config/application.rb.
 

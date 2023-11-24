@@ -1,0 +1,24 @@
+<div class="w-full p-6">
+  <div class="flex justify-between items-center gap-6">
+    <div>
+      <div class="hidden lg:block">
+        <a href="#" data-reveal-target="openTrigger" data-action="click->reveal#toggle:prevent" class="hidden h-12 w-12 bg-slate-200 hover:bg-slate-300 rounded-lg flex items-center justify-center cursor-pointer" aria-label="Open sidebar">
+          <i class="fa-solid fa-angles-right text-slate-900"></i>
+        </a>
+      </div>
+
+      <a href="#" class="lg:hidden h-12 w-12 bg-slate-200 hover:bg-slate-300 rounded-lg flex items-center justify-center cursor-pointer" aria-label="Toggle mobile navigation">
+        <i class="fa-solid fa-bars text-slate-900"></i>
+      </a>
+    </div>
+
+    <div class="flex justify-between items-center gap-6">
+      <%= link_to edit_user_registration_path, class: "h-12 w-12 bg-slate-200 hover:bg-slate-300 rounded-lg flex items-center justify-center cursor-pointer" do %>
+        <i class="fa-solid fa-gear text-2xl text-slate-900"></i>
+      <% end %>
+      <%= link_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "cursor-pointer hover:underline" do %>
+        <i class="fa-solid fa-arrow-right-from-bracket mr-1.5"></i>Log out
+      <% end %>
+    </div>
+  </div>
+</div>
