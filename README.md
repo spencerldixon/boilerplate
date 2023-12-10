@@ -6,12 +6,12 @@ A mildly opinionated starting point for rails projects based on good practices a
 
 Built on...
 
-- Rails 7.0.4
+- Rails 7.1.2
 - Ruby 3.2.2
 - PostgreSQL 15
 - Hotwire
 - Tailwind (with Tailwind Forms)
-- Esbuild
+- Bun
 - Stimulus
 - Good Job (background queue)
 - Active Storage (S3)
