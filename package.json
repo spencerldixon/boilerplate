@@ -10,13 +10,12 @@
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.11",
     "canvas-confetti": "^1.9.0",
-    "esbuild": "^0.15.7",
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",
     "tailwindcss": "^3.1.8"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
+    "build": "bun bun.config.js",
     "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   }
 }
