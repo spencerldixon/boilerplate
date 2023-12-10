@@ -32,6 +32,7 @@ With these pre-installed...
 - Letter Opener (https://github.com/ryanb/letter_opener)
 - Bullet
 - Sitemap Generator
+- Pay
 
 ## Setup
 
@@ -73,6 +74,13 @@ amazon:
   secret_access_key: ""
   region: ""
   bucket: ""
+
+stripe:
+  private_key: xxxx
+  public_key: yyyy
+  signing_secret:
+  - aaaa
+  - bbbb
 ```
 
 4. Replace values with your own credentials!
@@ -108,6 +116,7 @@ Here's what you get out of the box...
 - Performance tweaks for a high Lighthouse score out of the box
 - Sitemap Generator gem for dynamic sitemaps - `rails sitemap:refresh`
 - Active Storage configured with S3 to host the sitemap (since ephemeral storage with Heroku)
+- The Pay gem set up for handling payment with Stripe
 
 ## Configurations
 
@@ -135,6 +144,7 @@ Things that have been changed from their defaults...
 - Enables text compression with Rack::Deflator for better performance
 - Adds default metatags for SEO in `app/views/shared/metatags.html.erb`
 - Removes trailing slashes from urls - https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes
+- Don't send Stripe emails from Boilerplate, but send them from Stripe instead
 
 
 ## Launch checklist
@@ -145,7 +155,7 @@ Before you launch, don't forget to...
 2. Set config variables for your support email and other config
 3. Add your analytics in `views/shared/_analytics.html.erb`
 4. Add your metatags in `views/shared/_metatags.html.erb`
-5.
+5. Make sure Stripe is set to send emails (Boilerplate will not by default, but you can set this in `config/initializers/pay.rb`)
 
 ## Tests & Linting
 

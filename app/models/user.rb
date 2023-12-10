@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  pay_customer stripe_attributes: :stripe_attributes
+  pay_customer default_payment_processor: :stripe, stripe_attributes: :stripe_attributes
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable,

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Subscriptions
-  get "subscriptions/new"
-  get "subscriptions/checkout"
+  get "subscriptions/new", to: "subscriptions#new", as: "new_subscription"
+  get "subscriptions/checkout", to: "subscriptions#checkout", as: "checkout"
 
   # Onboarding
   get "onboarding", to: "onboarding#index"
