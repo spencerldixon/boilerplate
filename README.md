@@ -145,6 +145,7 @@ Things that have been changed from their defaults...
 - Adds default metatags for SEO in `app/views/shared/metatags.html.erb`
 - Removes trailing slashes from urls - https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes
 - Don't send Stripe emails from Boilerplate, but send them from Stripe instead
+- Cancels a users subscription on deletion
 
 
 ## Launch checklist
