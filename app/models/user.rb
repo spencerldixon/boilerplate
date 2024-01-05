@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  pay_customer default_payment_processor: :stripe, stripe_attributes: :stripe_attributes
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable,
     :confirmable, :lockable, :trackable
@@ -22,6 +24,22 @@ class User < ApplicationRecord
     if COMMON_PASSWORDS.include?(password)
       errors.add(:password, "Cannot be a common password")
     end
+  end
+
+
+  private
+
+  def stripe_attributes(pay_customer)
+    {
+      metadata: {
+        pay_customer_id: pay_customer.id,
+        user_id: id
+      }
+    }
+  end
+
+  def pay_should_sync_customer?
+    super || saved_change_to_first_name? || saved_change_to_last_name?
   end
 
   def send_devise_notification(notification, *)

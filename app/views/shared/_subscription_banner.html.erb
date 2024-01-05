@@ -1,0 +1,5 @@
+<% unless current_user.payment_processor.subscribed? %>
+  <div id="subscription-banner" class="flex bg-indigo-500 text-white font-semibold p-2 justify-center rounded-xl">
+    You do not have an active subscription. <%= link_to "Subscribe now", new_subscription_path, class: "font-bold underline", data: { turbo: false } %>
+  </div>
+<% end %>

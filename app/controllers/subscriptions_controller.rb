@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:pricing]
+  # skip_before_action :authenticate_user!, only: [:pricing]
+  layout "landing_page"
 
   def index
     # Render a users billing portal
@@ -32,7 +33,7 @@ class SubscriptionsController < ApplicationController
       # Redirect to checkout
       redirect_to @checkout_session.url, allow_other_host: true, status: :see_other
     else
-      redirect_to root_path, notice: "Something went wrong, please try again"
+      redirect_to root_path, alert: "Something went wrong, please try again"
     end
   end
 end

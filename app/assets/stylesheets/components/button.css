@@ -1,0 +1,3 @@
+.button {
+  @apply block bg-zinc-900 text-white px-12 py-2.5 rounded-xl hover:bg-zinc-800 cursor-pointer focus:bg-zinc-800 active:bg-zinc-800
+}

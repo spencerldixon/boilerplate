@@ -54,16 +54,15 @@ module Boilerplate
     config.action_mailer.delivery_method = :smtp
 
     config.action_mailer.default_url_options = {
-      host: "localhost",
-      port: 3000
+      host: Rails.application.credentials.dig(:mailer, :host),
     }
 
     config.action_mailer.smtp_settings = {
-      user_name: ENV["MAILER_USERNAME"],
-      password: ENV["MAILER_PASSWORD"],
-      domain: ENV["MAILER_DOMAIN"],
-      address: ENV["MAILER_ADDRESS"],
-      port: 465,
+      user_name: Rails.application.credentials.dig(:mailer, :username),
+      password: Rails.application.credentials.dig(:mailer, :password),
+      domain: Rails.application.credentials.dig(:mailer, :domain),
+      address: Rails.application.credentials.dig(:mailer, :address),
+      port: Rails.application.credentials.dig(:mailer, :port),
       authentication: :plain,
       enable_starttls_auto: true
     }

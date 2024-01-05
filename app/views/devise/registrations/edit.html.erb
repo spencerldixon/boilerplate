@@ -63,6 +63,17 @@
   <hr class="my-6">
 
   <p class="font-semibold">Your subscription</p>
+
+  <div class="mt-6">
+    <i class="fa-brands fa-3x fa-stripe"></i>
+
+    <% if current_user.payment_processor.subscribed? %>
+      <%= link_to "Update or cancel subscription", current_user.payment_processor.billing_portal.url , class: "button--dark" %>
+    <% else %>
+      <p class="mb-4">You are not currently subscribed</p>
+      <%= link_to "Subscribe", new_subscription_path, class: "bg-zinc-900 text-white px-12 py-2.5 rounded-xl hover:bg-zinc-800 cursor-pointer focus:bg-zinc-800 active:bg-zinc-800" %>
+    <% end %>
+  </div>
 <% end %>
 
 <hr class="my-6">

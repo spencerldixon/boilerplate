@@ -14,5 +14,12 @@ FactoryBot.define do
     trait :confirmed do
       confirmed_at { Time.current }
     end
+
+    trait :with_subscription do
+      after(:create) do |user, evaluator|
+        user.set_payment_processor :fake_processor, allow_fake: true
+        user.payment_processor.subscribe(plan: "example")
+      end
+    end
   end
 end

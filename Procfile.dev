@@ -2,3 +2,4 @@ web: env RUBY_DEBUG_OPEN=true bin/rails server
 js: bun run build --watch
 css: bun run build:css --watch
 worker: bundle exec good_job start
+/* stripe: stripe listen --forward-to localhost:3000/pay/webhooks/stripe */
