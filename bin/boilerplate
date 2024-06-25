@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'boilerplate'
+
+puts ARGV
+
+case ARGV
+in ["new", name, *everything_else]
+  puts name
+  puts everything_else.inspect
+in ["app:template"]
+else
+  puts "Hello world"
+end
