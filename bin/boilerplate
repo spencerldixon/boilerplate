@@ -1,14 +1,29 @@
 #!/usr/bin/env ruby
 
 require 'boilerplate'
+require 'optparse'
 
-puts ARGV
+MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
+TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "templates")
+
+$CONFIG = {
+  silent_mode: false
+}
+
+# options = {}
+#
+# OptionParser.new do |opts|
+  # opts.on("-z", "--omakase") do |v|
+    # options[:omakase] = true
+  # end
+# end.parse!
+
+# Create a global config object to keep track of what we install
+$CONFIG = Boilerplate::Config.new()
 
 case ARGV
-in ["new", name, *everything_else]
-  puts name
-  puts everything_else.inspect
-in ["app:template"]
-else
-  puts "Hello world"
+in ["new", name, *args]
+  # system("rails new #{name} -m #{TEMPLATES_PATH}/omakase.rb")
+# in ["app:template", "-x", module_name]
+  # system("rails app:template LOCATION=boilerplate/modules/#{module_name}.rb")
 end

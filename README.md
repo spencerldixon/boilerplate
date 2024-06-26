@@ -1,4 +1,4 @@
-# Boilerplate
+# 🔥 Boilerplate
 
 A mildly opinionated starting point for generating rails projects based on good practices and clean code.
 
@@ -28,6 +28,14 @@ If you don't care, you can go for the omakase install, which will not ask any qu
 boilerplate new blog --omakase
 ```
 
+### Adding boilerplate to an existing app
+
+Since boilerplate is a collection of rails templates, you can take advantage of this by adding them to existing apps by using `app:template` and then the `-x` flag with the name of the module you want to install. A full list of modules is in the `lib/boilerplate/modules/` directory. Use the file name without the `.rb`
+
+```
+boilerplate app:template -x devise
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -37,4 +45,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/spencerldixon/boilerplate.
-
