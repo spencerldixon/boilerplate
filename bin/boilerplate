@@ -3,12 +3,21 @@
 require 'boilerplate'
 require 'optparse'
 
-MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
+# MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
 TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "templates")
 
-$CONFIG = {
-  silent_mode: false
-}
+#
+# puts File.expand_path('..')
+# puts TEMPLATES_PATH
+# puts File.expand_path(__FILE__)
+# puts File.expand_path('..', __FILE__)
+
+
+
+
+# $CONFIG = {
+  # silent_mode: false
+# }
 
 # options = {}
 #
@@ -19,11 +28,31 @@ $CONFIG = {
 # end.parse!
 
 # Create a global config object to keep track of what we install
-$CONFIG = Boilerplate::Config.new()
+# $CONFIG = Boilerplate::Config.new()
+#
+#
+puts <<-TEXT
+
+██████╗  ██████╗ ██╗██╗     ███████╗██████╗ ██████╗ ██╗      █████╗ ████████╗███████╗
+██╔══██╗██╔═══██╗██║██║     ██╔════╝██╔══██╗██╔══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝
+██████╔╝██║   ██║██║██║     █████╗  ██████╔╝██████╔╝██║     ███████║   ██║   █████╗
+██╔══██╗██║   ██║██║██║     ██╔══╝  ██╔══██╗██╔═══╝ ██║     ██╔══██║   ██║   ██╔══╝
+██████╔╝╚██████╔╝██║███████╗███████╗██║  ██║██║     ███████╗██║  ██║   ██║   ███████╗
+╚═════╝  ╚═════╝ ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+
+TEXT
 
 case ARGV
 in ["new", name, *args]
-  # system("rails new #{name} -m #{TEMPLATES_PATH}/omakase.rb")
+  system("rails new #{name} -m #{TEMPLATES_PATH}/omakase.rb")
 # in ["app:template", "-x", module_name]
   # system("rails app:template LOCATION=boilerplate/modules/#{module_name}.rb")
+else
+  puts <<-TEXT
+    USAGE:
+
+    boilerplate new APP_NAME (Generate a new application with the wizard)
+    boilerplate new APP_NAME --omakase (Generate a new application with pre-chosen sensible defaults)
+    boilerplate app:template -x MODULE (Add a module to an existing application)
+  TEXT
 end

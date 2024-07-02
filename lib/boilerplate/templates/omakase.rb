@@ -1,11 +1,16 @@
-# MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
+require "boilerplate/templates/daisyui.rb"
+
 class Omakase
-  def initialize()
+  def initialize(generator:)
+    @generator = generator
+    @options = @generator.options
+
+    @generator.extend(DaisyUi)
   end
 
-  def install
-    # require "#{MODULES_PATH}/daisyui.rb"
+  def install!
+    @generator.install_daisyui
   end
 end
 
-Omakase.new($CONFIG).install
+Omakase.new(generator: self).install!

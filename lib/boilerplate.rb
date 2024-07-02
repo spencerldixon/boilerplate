@@ -11,4 +11,16 @@ module Boilerplate
       @js = js
     end
   end
+
+  # class Base
+    # included do
+      # class_attribute :config
+    # end
+#
+    # class_methods do
+      # def inherited(base)
+        # base.config = $CONFIG
+      # end
+    # end
+  # end
 end
