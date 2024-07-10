@@ -6,19 +6,6 @@ require 'optparse'
 # MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
 TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "templates")
 
-#
-# puts File.expand_path('..')
-# puts TEMPLATES_PATH
-# puts File.expand_path(__FILE__)
-# puts File.expand_path('..', __FILE__)
-
-
-
-
-# $CONFIG = {
-  # silent_mode: false
-# }
-
 # options = {}
 #
 # OptionParser.new do |opts|

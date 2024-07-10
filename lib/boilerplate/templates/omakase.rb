@@ -9,7 +9,8 @@ class Omakase
   end
 
   def install!
-    @generator.install_daisyui
+    puts @generator.inspect
+   # @generator.install_daisyui
   end
 end
 
