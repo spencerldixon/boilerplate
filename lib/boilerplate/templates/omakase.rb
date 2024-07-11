@@ -1,4 +1,10 @@
-Dir["boilerplate/modules/*.rb"].each {|file| require file }
+require 'boilerplate/modules/daisy_ui.rb'
+require 'boilerplate/modules/devise.rb'
+require 'boilerplate/modules/bullet.rb'
+require 'boilerplate/modules/metatags.rb'
+require 'boilerplate/modules/legal_pages.rb'
+require 'boilerplate/modules/analytics.rb'
+require 'boilerplate/modules/font_awesome.rb'
 require 'pp'
 
 MODULES = %w(
@@ -19,7 +25,7 @@ class Omakase
     # Define options to be passed to each module
     @options = @generator.options.merge({
       app_name: @app_name,
-      silent: true
+      silent: false
     }).transform_keys(&:to_sym)
 
     # Extend the generator with our chosen modules

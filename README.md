@@ -2,6 +2,8 @@
 
 A mildly opinionated starting point for generating rails projects based on good practices and clean code.
 
+![Screen recorded demo](demo.gif)
+
 ## Installation
 
 ```
@@ -69,8 +71,8 @@ Boilerplate comes with the following modules...
 - ErrorMessageOn - a helper for rendering nicer per-field validation messages in forms
 - GitIgnore - sensible defaults for the `.gitignore` file
 - RobotsTxt - disable OpenAI's GPTBot web crawler in the `robots.txt` file
-- ForceHttps - sensible defaults for forcing HTTPS (https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/)[https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/]
-- RemoveTrailingSlashes - removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)[https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes]
+- ForceHttps - sensible defaults for forcing HTTPS [](https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/)
+- RemoveTrailingSlashes - removes trailing slashes from urls [](https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)
 - Stripe - payment integration with Stripe
 
 ## Development

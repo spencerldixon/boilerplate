@@ -31,7 +31,7 @@ in ["new", name, *args]
     system("rails new #{name} -d postgresql -c tailwind -m #{TEMPLATES_PATH}/omakase.rb")
   else
     # Prompted custom install
-    system("rails new #{name} -m #{TEMPLATES_PATH}/omakase.rb")
+    system("rails new #{name} -d postgresql -c tailwind -m #{TEMPLATES_PATH}/omakase.rb")
   end
 # in ["app:template", "-x", module_name]
   # system("rails app:template LOCATION=boilerplate/modules/#{module_name}.rb")
