@@ -1,6 +1,6 @@
 # 🔥 Boilerplate
 
-A mildly opinionated starting point for generating rails projects based on good practices and clean code.
+A mildly opinionated gem for interactively kickstarting your rails projects based on good practices and clean code.
 
 ![Screen recorded demo](demo.gif)
 
@@ -12,7 +12,7 @@ gem install boilerplate
 
 ## Usage
 
-Use Boilerplate just how you'd use the `rails` command in generating a new application. Boilerplate will then start a CLI prompt asking you what you'd like to add to your application.
+Use `boilerplate` just how you'd use the `rails` command in generating a new application. Boilerplate will then start a CLI prompt asking you what you'd like to add to your application.
 
 ```
 boilerplate new app_name
@@ -21,10 +21,10 @@ boilerplate new app_name
 You can also add all the usual rails flags and boilerplate will preserve them:
 
 ```
-boilerplate new blog -d postgresql
+boilerplate new blog -d postgresql -c tailwindcss
 ```
 
-If you don't care, you can go for the omakase install, which will not ask any questions and give you a boilerplate rails app based on my personal preferences. This will default to postgresql and tailwind.
+If you don't care, you can go for the omakase install (my personal fav), which will skip the questions and give you a boilerplate rails app with everything you need based on sensible defaults. This will default to postgresql and tailwind.
 
 ```
 boilerplate new blog --omakase
@@ -35,12 +35,12 @@ boilerplate new blog --omakase
 Since boilerplate is a collection of rails templates, you can take advantage of this by adding them to existing apps by using `app:template` and then the `-x` flag with the name of the module you want to install. A full list of modules is in the `lib/boilerplate/modules/` directory. Use the file name without the `.rb`
 
 ```
-boilerplate app:template -x devise
+boilerplate app:template -x daisy_ui
 ```
 
 ## Notes and stuff to be aware of
 
-If you use Boilerplate for generating views, be aware that Boilerplate uses tailwind for the majority of it's html templates and you will need to install this. This is done by default in the omakase install, and asked for in the default installation wizard.
+If you use Boilerplate for generating views, be aware that Boilerplate uses tailwind for the majority of it's html templates and you will need to install this. This is done by default in the Omakase install, and asked for in the default installation wizard.
 
 ## Modules
 
@@ -84,3 +84,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/spencerldixon/boilerplate.
+
+It's pretty easy to contribute a module since it's just using the default templating language of rails. Follow the conventions of other modules, add it to the list of modules and make a pr!
