@@ -44,15 +44,34 @@ If you use Boilerplate for generating views, be aware that Boilerplate uses tail
 
 Boilerplate comes with the following modules...
 
-- AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place
 - DaisyUI - a themeable component library for TailwindCSS
-- Devise - user authentication
+- Devise - user authentication with an extra `admin` boolean column, t&cs validations, confirmable and lockable enabled, and sensible devise defaults
 - Bullet - help kill N+1 queries and unused eager loading
 - Metatags - SEO plugin for Rails with the meta-tags gem (uses AppName)
-- TailwindPlugins - Adds typography and form plugins to tailwind (doesn't install tailwind itself)
 - HomePage - Set root path for your app between login or boilerplate's default static home page template (uses AppName)
 - LegalPages - Generate a default privacy and t&c pages at `/privacy` and `/terms_and_conditions` (uses AppName)
 - Analytics - adds an empty `app/views/shared/_analytics.html.erb` partial for you to put your analytics in, required in all layouts by default
+- FontAwesome - Free icons library
+
+### Coming soon / In Progress
+- AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place
+- GoodJob - a PostgreSQL backed Active Job backend (installs dashboard too, authenticated for admins only)
+- ActiveStorage - configure active storage with Kamal in production
+- Dashboard - a blank user dashboard template
+- AdminDashboard - an admin dashboard template to list and search for users
+- FlashNotifications - prestyled flash notifications with vanilla rails or turbo streams
+- Cancancan - Role based authorization configured with nicer error messages in `en.yml`
+- RSpec - Testing suite with RSpec, FactoryBot and Capybara
+- SitemapGenerator - XML Sitemap generator with the `sitemap_generator` gem
+- Mailer - Mailer configuration per environment
+- OnboardingModal - a turbo frames based onboarding modal displayed to users post registration
+- Favicons - a default PWA favicon set
+- ErrorMessageOn - a helper for rendering nicer per-field validation messages in forms
+- GitIgnore - sensible defaults for the `.gitignore` file
+- RobotsTxt - disable OpenAI's GPTBot web crawler in the `robots.txt` file
+- ForceHttps - sensible defaults for forcing HTTPS (https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/)[https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/]
+- RemoveTrailingSlashes - removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)[https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes]
+- Stripe - payment integration with Stripe
 
 ## Development
 

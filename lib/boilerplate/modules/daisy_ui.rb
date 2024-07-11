@@ -36,7 +36,7 @@ module DaisyUi
     sunset
   )
 
-  def install_daisy_ui(silent: false)
+  def install_daisy_ui(silent: false, **)
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Install DaisyUI via CDN?")

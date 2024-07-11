@@ -1,7 +1,7 @@
 require "tty-prompt"
 
 module Bullet
-  def install_bullet(silent: false)
+  def install_bullet(silent: false, **)
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Install Bullet?")

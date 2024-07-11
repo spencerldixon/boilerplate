@@ -1,7 +1,7 @@
 require "tty-prompt"
 
 module Metatags
-  def install_metatags(silent: false, app_name:)
+  def install_metatags(silent: false, app_name:, **)
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Install Meta-tags?")

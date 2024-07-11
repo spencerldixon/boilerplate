@@ -1,7 +1,7 @@
 require "tty-prompt"
 
 module Devise
-  def install_devise(silent: false)
+  def install_devise(silent: false, **)
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Install Devise?")

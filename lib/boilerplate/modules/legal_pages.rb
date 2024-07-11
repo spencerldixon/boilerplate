@@ -3,7 +3,7 @@ require "tty-prompt"
 module LegalPages
   FILES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "files")
 
-  def install_legal_pages(silent: false)
+  def install_legal_pages(silent: false, **)
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Install boilerplate /privacy and /terms_and_condition pages?")
