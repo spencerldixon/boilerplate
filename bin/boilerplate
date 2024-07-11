@@ -3,7 +3,6 @@
 require 'boilerplate'
 require 'optparse'
 
-# MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
 TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "templates")
 
 # options = {}
@@ -14,10 +13,6 @@ TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib",
   # end
 # end.parse!
 
-# Create a global config object to keep track of what we install
-# $CONFIG = Boilerplate::Config.new()
-#
-#
 puts <<-TEXT
 
 ██████╗  ██████╗ ██╗██╗     ███████╗██████╗ ██████╗ ██╗      █████╗ ████████╗███████╗
