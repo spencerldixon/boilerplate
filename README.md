@@ -47,6 +47,7 @@ Boilerplate comes with the following modules...
 - DaisyUI - a themeable component library for TailwindCSS
 - Devise - user authentication
 - Bullet - help kill N+1 queries and unused eager loading
+- Metatags - SEO plugin for Rails with the meta-tags gem
 
 ## Development
 
