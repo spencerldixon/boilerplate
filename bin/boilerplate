@@ -5,13 +5,13 @@ require 'optparse'
 
 TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "templates")
 
-# options = {}
-#
-# OptionParser.new do |opts|
-  # opts.on("-z", "--omakase") do |v|
-    # options[:omakase] = true
-  # end
-# end.parse!
+options = {}
+
+OptionParser.new do |opts|
+  opts.on("--omakase") do |v|
+    options[:omakase] = true
+  end
+end.parse!
 
 puts <<-TEXT
 
@@ -26,7 +26,13 @@ TEXT
 
 case ARGV
 in ["new", name, *args]
-  system("rails new #{name} -m #{TEMPLATES_PATH}/omakase.rb")
+  if options[:omakase]
+    # Silent omakase install
+    system("rails new #{name} -d postgresql -c tailwind -m #{TEMPLATES_PATH}/omakase.rb")
+  else
+    # Prompted custom install
+    system("rails new #{name} -m #{TEMPLATES_PATH}/omakase.rb")
+  end
 # in ["app:template", "-x", module_name]
   # system("rails app:template LOCATION=boilerplate/modules/#{module_name}.rb")
 else

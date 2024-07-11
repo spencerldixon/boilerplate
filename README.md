@@ -16,13 +16,13 @@ Use Boilerplate just how you'd use the `rails` command in generating a new appli
 boilerplate new app_name
 ```
 
-You can also all the usual rails flags:
+You can also add all the usual rails flags and boilerplate will preserve them:
 
 ```
 boilerplate new blog -d postgresql
 ```
 
-If you don't care, you can go for the omakase install, which will not ask any questions and give you a boilerplate rails app based on my personal preferences.
+If you don't care, you can go for the omakase install, which will not ask any questions and give you a boilerplate rails app based on my personal preferences. This will default to postgresql and tailwind.
 
 ```
 boilerplate new blog --omakase
@@ -35,6 +35,18 @@ Since boilerplate is a collection of rails templates, you can take advantage of 
 ```
 boilerplate app:template -x devise
 ```
+
+## Notes and stuff to be aware of
+
+If you use Boilerplate for generating views, be aware that Boilerplate uses tailwind for the majority of it's html templates and you will need to install this. This is done by default in the omakase install, and asked for in the default installation wizard.
+
+## Modules
+
+Boilerplate comes with the following modules...
+
+- DaisyUI - a themeable component library for TailwindCSS
+- Devise - user authentication
+- Bullet - help kill N+1 queries and unused eager loading
 
 ## Development
 
