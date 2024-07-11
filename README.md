@@ -44,10 +44,15 @@ If you use Boilerplate for generating views, be aware that Boilerplate uses tail
 
 Boilerplate comes with the following modules...
 
+- AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place
 - DaisyUI - a themeable component library for TailwindCSS
 - Devise - user authentication
 - Bullet - help kill N+1 queries and unused eager loading
-- Metatags - SEO plugin for Rails with the meta-tags gem
+- Metatags - SEO plugin for Rails with the meta-tags gem (uses AppName)
+- TailwindPlugins - Adds typography and form plugins to tailwind (doesn't install tailwind itself)
+- HomePage - Set root path for your app between login or boilerplate's default static home page template (uses AppName)
+- LegalPages - Generate a default privacy and t&c pages at `/privacy` and `/terms_and_conditions` (uses AppName)
+- Analytics - adds an empty `app/views/shared/_analytics.html.erb` partial for you to put your analytics in, required in all layouts by default
 
 ## Development
 

@@ -2,14 +2,14 @@ require "boilerplate/modules/daisy_ui.rb"
 require "boilerplate/modules/devise.rb"
 require "boilerplate/modules/bullet.rb"
 require "boilerplate/modules/metatags.rb"
-
-require 'pp'
+require "boilerplate/modules/legal_pages.rb"
 
 MODULES = %w(
   DaisyUi
   Devise
   Bullet
   Metatags
+  LegalPages
 )
 
 class Omakase
@@ -17,6 +17,9 @@ class Omakase
     @generator = generator
     @options = @generator.options
     @app_name = @generator.send(:app_name) # Send as this is a private method
+
+    # Override source path for generator
+    # @generator.send(:define_singleton_method, :source_paths, proc { [FILES_PATH] })
 
     # Extend the generator with our chosen modules
     MODULES.each do |module_name|
@@ -30,10 +33,11 @@ class Omakase
       # @generator.send("install_#{module_name.gsub(/(.)([A-Z])/,'\1_\2').downcase}", **options)
     # end
 
-    @generator.install_daisy_ui(silent: true)
-    @generator.install_devise(silent: true)
-    @generator.install_bullet(silent: true)
-    @generator.install_metatags(silent: true, app_name: @app_name)
+    # @generator.install_daisy_ui(silent: true)
+    # @generator.install_devise(silent: true)
+    # @generator.install_bullet(silent: true)
+    # @generator.install_metatags(silent: true, app_name: @app_name)
+    @generator.install_legal_pages
   end
 end
 
