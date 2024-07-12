@@ -54,6 +54,8 @@ Boilerplate comes with the following modules...
 - LegalPages - Generate a default privacy and t&c pages at `/privacy` and `/terms_and_conditions` (uses AppName)
 - Analytics - adds an empty `app/views/shared/_analytics.html.erb` partial for you to put your analytics in, required in all layouts by default
 - FontAwesome - Free icons library
+- RobotsTxt - disable OpenAI's GPTBot web crawler in the `robots.txt` file
+- RemoveTrailingSlashes - removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)
 
 ### Coming soon / In Progress
 - AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place
@@ -70,9 +72,7 @@ Boilerplate comes with the following modules...
 - Favicons - a default PWA favicon set
 - ErrorMessageOn - a helper for rendering nicer per-field validation messages in forms
 - GitIgnore - sensible defaults for the `.gitignore` file
-- RobotsTxt - disable OpenAI's GPTBot web crawler in the `robots.txt` file
-- ForceHttps - sensible defaults for forcing HTTPS [](https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/)
-- RemoveTrailingSlashes - removes trailing slashes from urls [](https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)
+- ForceHttps - sensible defaults for forcing HTTPS (https://www.stackhawk.com/blog/rails-http-strict-transport-security-guide-what-it-is-and-how-to-enable-it/)
 - Stripe - payment integration with Stripe
 
 ## Development

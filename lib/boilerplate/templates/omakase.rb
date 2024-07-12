@@ -5,6 +5,8 @@ require 'boilerplate/modules/metatags.rb'
 require 'boilerplate/modules/legal_pages.rb'
 require 'boilerplate/modules/analytics.rb'
 require 'boilerplate/modules/font_awesome.rb'
+require 'boilerplate/modules/robots.rb'
+require 'boilerplate/modules/remove_trailing_slashes.rb'
 require 'pp'
 
 MODULES = %w(
@@ -15,6 +17,8 @@ MODULES = %w(
   LegalPages
   Analytics
   FontAwesome
+  Robots
+  RemoveTrailingSlashes
 )
 
 class Omakase
@@ -25,7 +29,7 @@ class Omakase
     # Define options to be passed to each module
     @options = @generator.options.merge({
       app_name: @app_name,
-      silent: false
+      silent: true
     }).transform_keys(&:to_sym)
 
     # Extend the generator with our chosen modules
@@ -35,7 +39,7 @@ class Omakase
   end
 
   def install!
-    # Call .install_module_name for each module and splat in the @options has as keyword argss
+    # Call .install_module_name for each module and splat in the @options hash as keyword argss
     MODULES.each do |module_name|
       @generator.send("install_#{module_name.gsub(/(.)([A-Z])/,'\1_\2').downcase}", **@options)
     end
