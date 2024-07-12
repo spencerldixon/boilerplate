@@ -24,8 +24,17 @@ module Devise
       end
 
       # Add a t&c validation to the resource model
+      inject_into_file "app/models/#{resource.downcase}.rb", before: "end" do
+        <<-eos
+  \n\t# Add terms and conditions validation on create
+  attr_accessor :terms_and_conditions
+  validates_acceptance_of :terms_and_conditions, allow_nil: false, on: :create
+        eos
+      end
 
       # Enable confirmable and lockable
+      if silent || prompt.yes?("Enable :lockable and :confirmable modules for Devise?")
+      end
 
       if silent || prompt.yes?("What do you want to copy over boilerplate's prestyled devise views and partials?")
         # TODO Copy devise views
