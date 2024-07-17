@@ -19,6 +19,7 @@ MODULES = %w(
   FontAwesome
   Robots
   RemoveTrailingSlashes
+  GoodJob
 )
 
 class Omakase
