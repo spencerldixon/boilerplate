@@ -10,7 +10,6 @@ require 'boilerplate/modules/remove_trailing_slashes.rb'
 require 'boilerplate/modules/good_job.rb'
 require 'pp'
 require 'byebug'
-require 'boilerplate'
 
 MODULES = %w(
   DaisyUi
@@ -26,8 +25,6 @@ MODULES = %w(
 )
 
 # Since this file runs in the context of the rails generator, get the config from the main scope of our cli (bin/boilerplate)
-puts "from template"
-byebug
 
 
 class Omakase
@@ -38,9 +35,8 @@ class Omakase
     # Define options to be passed to each module
     @options = @generator.options.merge({
       app_name: @app_name,
-      silent: true
+      silent: ARGV.include?("--boilerplate-silent=true")
     }).transform_keys(&:to_sym)
-
 
     # Extend the generator with our chosen modules
     MODULES.each do |module_name|
