@@ -24,6 +24,14 @@ puts <<-TEXT
 
 TEXT
 
+# Enable/disable prompting on install
+@config = { silent: true }
+config = { silent: true }
+CONFIG = { silent: true }
+$CONFIG = { silent: true }
+
+Boilerplate::Config.class_variable_set(:@@silent, true)
+
 case ARGV
 in ["new", name, *args]
   if options[:omakase]

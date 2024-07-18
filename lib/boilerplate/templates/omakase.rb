@@ -7,7 +7,10 @@ require 'boilerplate/modules/analytics.rb'
 require 'boilerplate/modules/font_awesome.rb'
 require 'boilerplate/modules/robots.rb'
 require 'boilerplate/modules/remove_trailing_slashes.rb'
+require 'boilerplate/modules/good_job.rb'
 require 'pp'
+require 'byebug'
+require 'boilerplate'
 
 MODULES = %w(
   DaisyUi
@@ -22,6 +25,11 @@ MODULES = %w(
   GoodJob
 )
 
+# Since this file runs in the context of the rails generator, get the config from the main scope of our cli (bin/boilerplate)
+puts "from template"
+byebug
+
+
 class Omakase
   def initialize(generator:)
     @generator = generator
@@ -32,6 +40,7 @@ class Omakase
       app_name: @app_name,
       silent: true
     }).transform_keys(&:to_sym)
+
 
     # Extend the generator with our chosen modules
     MODULES.each do |module_name|

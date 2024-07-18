@@ -11,3 +11,4 @@ gem "standard", "~> 1.3"
 gem "tty-prompt", '~> 0.23.1'
 gem "thor", '~> 1.3.1'
 gem "activesupport"
+gem "byebug"

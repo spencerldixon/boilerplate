@@ -56,10 +56,10 @@ Boilerplate comes with the following modules...
 - FontAwesome - Free icons library
 - RobotsTxt - disable OpenAI's GPTBot web crawler in the `robots.txt` file
 - RemoveTrailingSlashes - removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)
+- GoodJob - a PostgreSQL backed Active Job backend (installs dashboard too, authenticated for admins only)
 
 ### Coming soon / In Progress
 - AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place
-- GoodJob - a PostgreSQL backed Active Job backend (installs dashboard too, authenticated for admins only)
 - ActiveStorage - configure active storage with Kamal in production
 - Dashboard - a blank user dashboard template
 - AdminDashboard - an admin dashboard template to list and search for users
