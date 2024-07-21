@@ -9,7 +9,6 @@ require 'boilerplate/modules/robots.rb'
 require 'boilerplate/modules/remove_trailing_slashes.rb'
 require 'boilerplate/modules/good_job.rb'
 require 'pp'
-require 'byebug'
 
 MODULES = %w(
   DaisyUi
@@ -22,6 +21,7 @@ MODULES = %w(
   Robots
   RemoveTrailingSlashes
   GoodJob
+  Seeds
 )
 
 # Since this file runs in the context of the rails generator, get the config from the main scope of our cli (bin/boilerplate)
