@@ -8,6 +8,7 @@ require 'boilerplate/modules/font_awesome.rb'
 require 'boilerplate/modules/robots.rb'
 require 'boilerplate/modules/remove_trailing_slashes.rb'
 require 'boilerplate/modules/good_job.rb'
+require 'boilerplate/modules/gitignore.rb'
 require 'pp'
 
 MODULES = %w(
@@ -22,6 +23,7 @@ MODULES = %w(
   RemoveTrailingSlashes
   GoodJob
   Seeds
+  Gitignore
 )
 
 # Since this file runs in the context of the rails generator, get the config from the main scope of our cli (bin/boilerplate)

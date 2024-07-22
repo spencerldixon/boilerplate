@@ -58,6 +58,7 @@ Boilerplate comes with the following modules...
 - RemoveTrailingSlashes - removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)
 - GoodJob - a PostgreSQL backed Active Job backend (installs dashboard too, authenticated for admins only)
 - Seeds - adds a test admin account to the seeds.rb file
+- Gitignore - sensible defaults for the `.gitignore` file
 
 ### Coming soon / In Progress
 - AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place
@@ -72,7 +73,6 @@ Boilerplate comes with the following modules...
 - OnboardingModal - a turbo frames based onboarding modal displayed to users post registration
 - Favicons - a default PWA favicon set
 - ErrorMessageOn - a helper for rendering nicer per-field validation messages in forms
-- GitIgnore - sensible defaults for the `.gitignore` file
 - Stripe - payment integration with Stripe
 - EnvironmentCredentials - per environment encrypted credentials files
 - ActiveRecord Encryption - set up active record encryption
