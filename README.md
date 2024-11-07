@@ -46,21 +46,6 @@ If you use Boilerplate for generating views, be aware that Boilerplate uses tail
 
 Boilerplate comes with the following modules...
 
-<<<<<<< HEAD
-- DaisyUI - a themeable component library for TailwindCSS
-- Devise - user authentication with an extra `admin` boolean column, t&cs validations, confirmable and lockable enabled, and sensible devise defaults
-- Bullet - help kill N+1 queries and unused eager loading
-- Metatags - SEO plugin for Rails with the meta-tags gem (uses AppName)
-- HomePage - Set root path for your app between login or boilerplate's default static home page template (uses AppName)
-- LegalPages - Generate a default privacy and t&c pages at `/privacy` and `/terms_and_conditions` (uses AppName)
-- Analytics - adds an empty `app/views/shared/_analytics.html.erb` partial for you to put your analytics in, required in all layouts by default
-- FontAwesome - Free icons library
-- RobotsTxt - disable OpenAI's GPTBot web crawler in the `robots.txt` file
-- RemoveTrailingSlashes - removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes)
-- GoodJob - a PostgreSQL backed Active Job backend (installs dashboard too, authenticated for admins only)
-- Seeds - adds a test admin account to the seeds.rb file
-- Gitignore - sensible defaults for the `.gitignore` file
-=======
 | Name | Description |
 |------|-------------|
 | DaisyUI | A themable component library for TailwindCSS | Allows you to configure theme |
@@ -75,7 +60,7 @@ Boilerplate comes with the following modules...
 | RemoveTrailingSlashes | Removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes) |
 | GoodJob | a PostgreSQL backed ActiveJob backend. Installs the dashboard too, authenticated for admins only |
 | Seeds | Adds a test admin account to the `seeds.rb` file with the username `test@test.com` and password `test1234test` |
->>>>>>> 5863796 (Updated readme, removed comments)
+| Gitignore | Adds sensible defaults to the `.gitignore` file |
 
 ### Coming soon / In Progress
 - AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place
