@@ -5,7 +5,6 @@ module Metatags
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Install Meta-tags?")
-      # Install metatags
       gem "meta-tags"
       run "bundle install"
       rails_command "g meta_tags:install"

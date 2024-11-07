@@ -21,10 +21,10 @@ boilerplate new app_name
 You can also add all the usual rails flags and boilerplate will preserve them:
 
 ```
-boilerplate new blog -d postgresql -c tailwindcss
+boilerplate new blog -d postgresql -c tailwindcss -j bun
 ```
 
-If you don't care, you can go for the omakase install (my personal fav), which will skip the questions and give you a boilerplate rails app with everything you need based on sensible defaults. This will default to postgresql and tailwind.
+If you don't care, you can go for the omakase install (my personal fav), which will skip the questions and give you a boilerplate rails app with everything you need based on sensible defaults. This will default to postgresql, tailwind and importmaps.
 
 ```
 boilerplate new blog --omakase
@@ -46,6 +46,7 @@ If you use Boilerplate for generating views, be aware that Boilerplate uses tail
 
 Boilerplate comes with the following modules...
 
+<<<<<<< HEAD
 - DaisyUI - a themeable component library for TailwindCSS
 - Devise - user authentication with an extra `admin` boolean column, t&cs validations, confirmable and lockable enabled, and sensible devise defaults
 - Bullet - help kill N+1 queries and unused eager loading
@@ -59,6 +60,22 @@ Boilerplate comes with the following modules...
 - GoodJob - a PostgreSQL backed Active Job backend (installs dashboard too, authenticated for admins only)
 - Seeds - adds a test admin account to the seeds.rb file
 - Gitignore - sensible defaults for the `.gitignore` file
+=======
+| Name | Description |
+|------|-------------|
+| DaisyUI | A themable component library for TailwindCSS | Allows you to configure theme |
+| Devise  | User authentication with an extra `admin` boolean column, Terms and Conditions validations, and sensible defaults |
+| Bullet  | Help kill N+1 queries and unused eager loading |
+| Metatags | SEO plugin for Rails with the `meta-tags` gem |
+| HomePage | Sets the root path for your application to `/users/sign_in` or to Boilerplate's default static home page template |
+| LegalPages | Generate boilerplate `/privacy` and `/terms_and_conditions` pages |
+| Analytics | Adds an empty `app/views/shared/_analytics.html.erb` partial for you to put your analytics in, required in all layouts by default |
+| FontAwesome | Free icons library |
+| RobotsTxt | Disable OpenAI's GPTBot web crawler in the `robots.txt` file |
+| RemoveTrailingSlashes | Removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes) |
+| GoodJob | a PostgreSQL backed ActiveJob backend. Installs the dashboard too, authenticated for admins only |
+| Seeds | Adds a test admin account to the `seeds.rb` file with the username `test@test.com` and password `test1234test` |
+>>>>>>> 5863796 (Updated readme, removed comments)
 
 ### Coming soon / In Progress
 - AppName - sets your app name as a custom config variable to be used everywhere your app name is mentioned so you can change it in one place

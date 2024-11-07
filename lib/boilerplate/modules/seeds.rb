@@ -5,7 +5,6 @@ module Seeds
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Generate a seed user?")
-      # Install metatags
       append_to_file 'db/seeds.rb' do
         <<-eos
 User.create(

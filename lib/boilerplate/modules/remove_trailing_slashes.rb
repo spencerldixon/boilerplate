@@ -5,7 +5,6 @@ module RemoveTrailingSlashes
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Install rack-rewrite to remove trailing slashes from urls?")
-      # Install metatags
       gem 'rack-rewrite'
       run 'bundle install'
 

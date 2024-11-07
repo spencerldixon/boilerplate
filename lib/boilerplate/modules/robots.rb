@@ -5,7 +5,6 @@ module Robots
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Disallow OpenAI's GPTBot web crawler in robots.txt?")
-      # Install metatags
       append_to_file 'public/robots.txt' do
         <<-eos
 User-agent: GPTBot
