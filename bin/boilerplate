@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'boilerplate'
+require 'optparse'
+
+TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "templates")
+MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.on("--omakase") do |v|
+    options[:omakase] = true
+  end
+end.parse
+
+puts <<-TEXT
+
+██████╗  ██████╗ ██╗██╗     ███████╗██████╗ ██████╗ ██╗      █████╗ ████████╗███████╗
+██╔══██╗██╔═══██╗██║██║     ██╔════╝██╔══██╗██╔══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝
+██████╔╝██║   ██║██║██║     █████╗  ██████╔╝██████╔╝██║     ███████║   ██║   █████╗
+██╔══██╗██║   ██║██║██║     ██╔══╝  ██╔══██╗██╔═══╝ ██║     ██╔══██║   ██║   ██╔══╝
+██████╔╝╚██████╔╝██║███████╗███████╗██║  ██║██║     ███████╗██║  ██║   ██║   ███████╗
+╚═════╝  ╚═════╝ ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+
+TEXT
+
+case ARGV
+in ["new", name, *args]
+  if options[:omakase]
+    # Silent omakase install
+    system("rails new #{name} -d postgresql -c tailwind -m #{TEMPLATES_PATH}/omakase.rb --boilerplate-silent=true #{args.join(' ')}")
+  else
+    # Prompted custom install
+    system("rails new #{name} -c tailwind -m #{TEMPLATES_PATH}/omakase.rb #{args.join(' ')}")
+  end
+in ["app:template", "-x", module_name]
+  system("rails app:template LOCATION=#{TEMPLATES_PATH}/#{module_name}.rb")
+else
+  puts <<-TEXT
+    USAGE:
+
+    boilerplate new APP_NAME (Generate a new application with the wizard)
+    boilerplate new APP_NAME --omakase (Generate a new application with pre-chosen sensible defaults)
+    boilerplate app:template -x MODULE (Add a module to an existing application)
+  TEXT
+end
