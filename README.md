@@ -59,7 +59,7 @@ Boilerplate comes with the following modules...
 | RobotsTxt | Disable OpenAI's GPTBot web crawler in the `robots.txt` file |
 | RemoveTrailingSlashes | Removes trailing slashes from urls (https://tosbourn.com/ruby-on-rails-seo/#remove-trailing-slashes) |
 | GoodJob | a PostgreSQL backed ActiveJob backend. Installs the dashboard too, authenticated for admins only |
-| Seeds | Adds a test admin account to the `seeds.rb` file with the username `test@test.com` and password `test1234test` |
+| Seeds | Adds a test admin account to the `seeds.rb` file with the username `test@test.com` and password `test1234` |
 | Gitignore | Adds sensible defaults to the `.gitignore` file |
 
 ### Coming soon / In Progress

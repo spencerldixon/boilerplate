@@ -5,7 +5,6 @@ module Gitignore
     prompt = TTY::Prompt.new(quiet: true)
 
     if silent || prompt.yes?("Extend gitignore to ignore database dumps, per environment credential keys, and macos default files?")
-      # Install metatags
       append_to_file '.gitignore' do
         <<-eos
 .env

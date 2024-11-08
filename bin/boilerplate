@@ -4,6 +4,7 @@ require 'boilerplate'
 require 'optparse'
 
 TEMPLATES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "templates")
+MODULES_PATH = File.join(Gem.loaded_specs["boilerplate"].full_gem_path, "lib", "boilerplate", "modules")
 
 options = {}
 
@@ -11,7 +12,7 @@ OptionParser.new do |opts|
   opts.on("--omakase") do |v|
     options[:omakase] = true
   end
-end.parse!
+end.parse
 
 puts <<-TEXT
 
@@ -28,13 +29,13 @@ case ARGV
 in ["new", name, *args]
   if options[:omakase]
     # Silent omakase install
-    system("rails new #{name} -d postgresql -c tailwind -m #{TEMPLATES_PATH}/omakase.rb --boilerplate-silent=true")
+    system("rails new #{name} -d postgresql -c tailwind -m #{TEMPLATES_PATH}/omakase.rb --boilerplate-silent=true #{args.join(' ')}")
   else
     # Prompted custom install
-    system("rails new #{name} -d postgresql -c tailwind -m #{TEMPLATES_PATH}/omakase.rb")
+    system("rails new #{name} -c tailwind -m #{TEMPLATES_PATH}/omakase.rb #{args.join(' ')}")
   end
-# in ["app:template", "-x", module_name]
-  # system("rails app:template LOCATION=boilerplate/modules/#{module_name}.rb")
+in ["app:template", "-x", module_name]
+  system("rails app:template LOCATION=#{TEMPLATES_PATH}/#{module_name}.rb")
 else
   puts <<-TEXT
     USAGE:

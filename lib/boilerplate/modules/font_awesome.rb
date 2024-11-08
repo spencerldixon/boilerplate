@@ -1,19 +1,15 @@
 require "tty-prompt"
+require "boilerplate/helpers/js_installer.rb"
 
 module FontAwesome
+  include JsInstaller
+
   def install_font_awesome(silent: false, javascript:, **)
     prompt = TTY::Prompt.new(quiet: true)
 
     after_bundle do
       if silent || prompt.yes?("Install FontAwesome?")
-        case javascript.to_sym
-        when :importmap
-          run "./bin/importmap pin @fortawesome/fontawesome-free"
-        when :bun
-          run "bun add @fortawesome/fontawesome-free"
-        else
-          run "npm install @fortawesome/fontawesome-free"
-        end
+        install_package_with(javascript.to_sym, "@fortawesome/fontawesome-free")
 
         append_to_file 'app/javascript/application.js' do
           <<-eos
