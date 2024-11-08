@@ -15,7 +15,6 @@ require 'pp'
 # List modules in the order they should be applied
 
 MODULES = %w(
-  DaisyUi
   Devise
   Bullet
   Metatags
@@ -27,6 +26,7 @@ MODULES = %w(
   GoodJob
   Seeds
   Gitignore
+  DaisyUi
 )
 
 # Since this file runs in the context of the rails generator, get the config from the main scope of our cli (bin/boilerplate)

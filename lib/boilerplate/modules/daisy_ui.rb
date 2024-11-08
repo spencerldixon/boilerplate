@@ -1,6 +1,9 @@
 require "tty-prompt"
+require "boilerplate/helpers/js_installer.rb"
 
 module DaisyUi
+  include JsInstaller
+
   DAISY_UI_THEMES = %w(
     light
     dark
@@ -36,20 +39,26 @@ module DaisyUi
     sunset
   )
 
-  def install_daisy_ui(silent: false, **)
+  def install_daisy_ui(silent: false, javascript:, **)
     prompt = TTY::Prompt.new(quiet: true)
 
-    if silent || prompt.yes?("Install DaisyUI via CDN?")
-      inject_into_file 'app/views/layouts/application.html.erb', :before => "</head>" do
-        <<-eos
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-        eos
+    after_bundle do
+      if silent || prompt.yes?("Install DaisyUI?")
+        install_package_with(javascript.to_sym, "daisyui@latest")
+
+        inject_into_file 'tailwind.config.js', after: "module.exports = {\n" do
+          <<-eos
+  plugins: [
+    require('daisyui')
+  ],
+          eos
+        end
+
+        # Prompt for a theme
+        theme = silent ? "light" : prompt.select("Which DaisyUI theme would you like?", DAISY_UI_THEMES, default: "light")
+
+        gsub_file 'app/views/layouts/application.html.erb', /<html>/, "<html data-theme=\"#{theme}\">"
       end
     end
-
-    # Prompt for a theme
-    theme = silent ? "light" : prompt.select("Which DaisyUI theme would you like?", DAISY_UI_THEMES, default: "light")
-
-    gsub_file 'app/views/layouts/application.html.erb', /<html>/, "<html data-theme=\"#{theme}\">"
   end
 end
